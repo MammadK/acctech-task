@@ -7,6 +7,7 @@ import {locale as esLang} from './modules/i18n/vocabs/es';
 import {locale as jpLang} from './modules/i18n/vocabs/jp';
 import {locale as deLang} from './modules/i18n/vocabs/de';
 import {locale as frLang} from './modules/i18n/vocabs/fr';
+import {locale as faLang} from './modules/i18n/vocabs/fa';
 import {ThemeModeService} from './_metronic/partials/layout/theme-mode-switcher/theme-mode.service';
 
 @Component({
@@ -29,7 +30,8 @@ export class AppComponent implements OnInit {
       esLang,
       jpLang,
       deLang,
-      frLang
+      frLang,
+      faLang
     );
   }
 
