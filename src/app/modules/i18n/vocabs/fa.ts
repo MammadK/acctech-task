@@ -23,7 +23,7 @@ export const locale = {
       WIZARDS: 'Wizards',
       HORIZONTAL: 'افقی',
       VERTICAL: 'عمودی',
-      ACCOUNTS: 'حساب‌هاِ کاربری',
+      ACCOUNTS: 'حساب‌های کاربری',
       SETTINGS: 'تنظیمات',
       ERRORS: 'خطاها',
       ERROR_404: 'خطای 404',
