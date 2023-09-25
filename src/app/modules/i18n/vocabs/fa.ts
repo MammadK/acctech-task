@@ -38,7 +38,7 @@ export const locale = {
       CHAT: 'چت',
       PRIVATE_CHAT: 'چت خصوصی',
       GROUP_CHART: 'چت گروهی',
-      DRAWER_CHART: 'نمودار در کشو'
+      DRAWER_CHART: 'Drawer Chat'
     },
     AUTH: {
       GENERAL: {
