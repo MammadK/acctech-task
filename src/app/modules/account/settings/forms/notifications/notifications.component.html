@@ -8,7 +8,7 @@
     aria-controls="kt_account_notifications"
   >
     <div class="card-title m-0">
-      <h3 class="fw-bolder m-0">Notifications</h3>
+      <h3 class="fw-bolder m-0" translate="X.NOTIFICATIONS"></h3>
     </div>
   </div>
   <div id="kt_account_notifications" class="collapse show">
@@ -20,7 +20,7 @@
           >
             <tbody class="fs-6 fw-bold">
               <tr>
-                <td class="min-w-250px fs-4 fw-bolder">Notifications</td>
+                <td class="min-w-250px fs-4 fw-bolder" translate="X.NOTIFICATIONS"></td>
                 <td class="w-125px">
                   <div class="form-check form-check-solid">
                     <input
@@ -32,7 +32,7 @@
                     /><label
                       class="form-check-label ps-2"
                       for="kt_settings_notification_email"
-                      >Email</label
+                       translate="X.EMAIL"></label
                     >
                   </div>
                 </td>
@@ -47,13 +47,13 @@
                     /><label
                       class="form-check-label ps-2"
                       for="kt_settings_notification_phone"
-                      >Phone</label
+                       translate="X.PHONE"></label
                     >
                   </div>
                 </td>
               </tr>
               <tr>
-                <td>Billing Updates</td>
+                <td translate="X.BILLING_UPDATES"></td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -84,7 +84,7 @@
                 </td>
               </tr>
               <tr>
-                <td>New Team Members</td>
+                <td translate="X.NEW_TEAM_MEMBERS"></td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -108,7 +108,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Completed Projects</td>
+                <td translate="X.COMPLETED_PROJECTS"></td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -138,7 +138,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="border-bottom-0">Newsletters</td>
+                <td class="border-bottom-0" translate="X.NEWSLETTERS"></td>
                 <td class="border-bottom-0">
                   <div class="form-check form-check-solid">
                     <input
@@ -171,10 +171,9 @@
         </div>
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
-        <button class="btn btn-light btn-active-light-primary me-2">
-          Discard</button
+        <button class="btn btn-light btn-active-light-primary me-2" translate="X.DISCARD"></button
         ><button type="button" class="btn btn-primary" (click)="saveSettings()">
-          <ng-container *ngIf="!isLoading">Save Changes</ng-container>
+          <ng-container *ngIf="!isLoading" translate="X.SAVE_CHANGES"></ng-container>
           <ng-container *ngIf="isLoading">
             <span class="indicator-progress" [style.display]="'block'">
               Please wait...{{ " " }}

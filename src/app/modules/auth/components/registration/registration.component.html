@@ -3,15 +3,11 @@
   <!--begin::Heading-->
   <div class="text-center mb-11">
     <!--begin::Title-->
-    <h1 class="text-dark fw-bolder mb-3">
-      Sign Up
-    </h1>
+    <h1 class="text-dark fw-bolder mb-3" translate="X.SIGN_UP"></h1>
     <!--end::Title-->
 
     <!--begin::Subtitle-->
-    <div class="text-gray-500 fw-semibold fs-6">
-      Your Social Campaigns
-    </div>
+    <div class="text-gray-500 fw-semibold fs-6" translate="X.YOUR_SOCIAL_CAMPAIGNS"></div>
     <!--end::Subtitle--->
   </div>
   <!--begin::Heading-->
@@ -46,23 +42,20 @@
   <!--end::Login options-->
 
   <!--begin::Separator-->
-  <div class="separator separator-content my-14"><span class="w-125px text-gray-500 fw-semibold fs-7">Or with
-      email</span></div>
+  <div class="separator separator-content my-14"><span class="w-125px text-gray-500 fw-semibold fs-7" translate="X.OR_WITH_EMAIL"></span></div>
   <!--end::Separator-->
 
   <!-- begin::Alert error-->
   <ng-container *ngIf="hasError">
     <div class="mb-lg-15 alert alert-danger">
-      <div class="alert-text font-weight-bold">
-        The registration details are incorrect
-      </div>
+      <div class="alert-text font-weight-bold" translate="X.THE_REGISTRATION_DETAILS_"></div>
     </div>
   </ng-container>
   <!-- end::Alert error-->
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
-    <label class="form-label fw-bolder text-dark fs-6">Fullname</label>
+    <label class="form-label fw-bolder text-dark fs-6" translate="X.FULLNAME"></label>
     <input class="form-control bg-transparent" type="text" name="fullname" formControlName="fullname"
       placeholder="Fullname" autocomplete="off" [ngClass]="{
         'is-invalid': registrationForm.controls['fullname'].invalid,
@@ -88,7 +81,7 @@
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
-    <label class="form-label fw-bolder text-dark fs-6">Email</label>
+    <label class="form-label fw-bolder text-dark fs-6" translate="X.EMAIL"></label>
     <input class="form-control bg-transparent" type="email" placeholder="Email" name="email" formControlName="email"
       autocomplete="off" [ngClass]="{
         'is-invalid': registrationForm.controls['email'].invalid,
@@ -119,7 +112,7 @@
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
-    <label class="form-label fw-bolder text-dark fs-6">Password</label>
+    <label class="form-label fw-bolder text-dark fs-6" translate="X.PASSWORD"></label>
     <input class="form-control bg-transparent" type="password" placeholder="Password" name="password"
       formControlName="password" autocomplete="off" [ngClass]="{
         'is-invalid': registrationForm.controls['password'].invalid,
@@ -145,7 +138,7 @@
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
-    <label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
+    <label class="form-label fw-bolder text-dark fs-6" translate="X.CONFIRM_PASSWORD"></label>
     <input class="form-control bg-transparent" type="password" placeholder="Confirm password" name="cPassword"
       autocomplete="off" formControlName="cPassword" [ngClass]="{
         'is-invalid': registrationForm.controls['cPassword'].invalid,
@@ -171,9 +164,7 @@
         registrationForm.controls['cPassword'].errors.ConfirmPassword
       ">
       <div class="fv-plugins-message-container">
-        <div class="fv-help-block">
-          'Passsword' and 'Confirm Password' didn't match.
-        </div>
+        <div class="fv-help-block" translate="X.PASSSWORD_AND_CONFIRM_PAS"></div>
       </div>
     </ng-container>
   </div>
@@ -197,7 +188,7 @@
         registrationForm.invalid || !registrationForm.controls['agree'].value
       " class="btn btn-primary">
       <ng-container *ngIf="(isLoading$ | async) === false">
-        <span class="indicator-label">Submit</span>
+        <span class="indicator-label" translate="X.SUBMIT"></span>
       </ng-container>
       <ng-container *ngIf="isLoading$ | async">
         <span class="indicator-progress" [style.display]="'block'">

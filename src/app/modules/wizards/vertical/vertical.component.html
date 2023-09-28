@@ -24,13 +24,9 @@
 
             <!--begin::Label-->
             <div class="stepper-label">
-              <h3 class="stepper-title">
-                Account Type
-              </h3>
+              <h3 class="stepper-title" translate="X.ACCOUNT_TYPE"></h3>
 
-              <div class="stepper-desc fw-semibold">
-                Setup Your Account Details
-              </div>
+              <div class="stepper-desc fw-semibold" translate="X.SETUP_YOUR_ACCOUNT_DETAIL"></div>
             </div>
             <!--end::Label-->
           </div>
@@ -56,12 +52,8 @@
 
             <!--begin::Label-->
             <div class="stepper-label">
-              <h3 class="stepper-title">
-                Account Settings
-              </h3>
-              <div class="stepper-desc fw-semibold">
-                Setup Your Account Settings
-              </div>
+              <h3 class="stepper-title" translate="X.ACCOUNT_SETTINGS"></h3>
+              <div class="stepper-desc fw-semibold" translate="X.SETUP_YOUR_ACCOUNT_SETTIN"></div>
             </div>
             <!--end::Label-->
           </div>
@@ -87,12 +79,8 @@
 
             <!--begin::Label-->
             <div class="stepper-label">
-              <h3 class="stepper-title">
-                Business Info
-              </h3>
-              <div class="stepper-desc fw-semibold">
-                Your Business Related Info
-              </div>
+              <h3 class="stepper-title" translate="X.BUSINESS_INFO"></h3>
+              <div class="stepper-desc fw-semibold" translate="X.YOUR_BUSINESS_RELATED_INF"></div>
             </div>
             <!--end::Label-->
           </div>
@@ -118,12 +106,8 @@
 
             <!--begin::Label-->
             <div class="stepper-label">
-              <h3 class="stepper-title">
-                Billing Details
-              </h3>
-              <div class="stepper-desc fw-semibold">
-                Set Your Payment Methods
-              </div>
+              <h3 class="stepper-title" translate="X.BILLING_DETAILS"></h3>
+              <div class="stepper-desc fw-semibold" translate="X.SET_YOUR_PAYMENT_METHODS"></div>
             </div>
             <!--end::Label-->
           </div>
@@ -146,12 +130,8 @@
 
             <!--begin::Label-->
             <div class="stepper-label">
-              <h3 class="stepper-title">
-                Completed
-              </h3>
-              <div class="stepper-desc fw-semibold">
-                Woah, we are here
-              </div>
+              <h3 class="stepper-title" translate="X.COMPLETED"></h3>
+              <div class="stepper-desc fw-semibold" translate="X.WOAH_WE_ARE_HERE"></div>
             </div>
             <!--end::Label-->
           </div>
@@ -206,9 +186,7 @@
                   Continue {{ " " }}
                   <app-keenicon name="arrow-right" class="fs-3 ms-2 me-0"></app-keenicon>
                 </ng-container>
-                <ng-container *ngIf="currentStep$.value === formsCount - 1">
-                  Submit
-                </ng-container>
+                <ng-container *ngIf="currentStep$.value === formsCount - 1" translate="X.SUBMIT"></ng-container>
               </span>
             </button>
           </div>

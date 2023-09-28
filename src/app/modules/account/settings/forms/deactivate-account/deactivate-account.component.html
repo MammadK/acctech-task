@@ -8,7 +8,7 @@
     aria-controls="kt_account_deactivate"
   >
     <div class="card-title m-0">
-      <h3 class="fw-bolder m-0">Deactivate Account</h3>
+      <h3 class="fw-bolder m-0" translate="X.DEACTIVATE_ACCOUNT"></h3>
     </div>
   </div>
   <div id="kt_account_deactivate" class="collapse show">
@@ -27,15 +27,13 @@
         >
           <div class="d-flex flex-stack flex-grow-1">
             <div class="fw-bold">
-              <h4 class="text-gray-800 fw-bolder">
-                You Are Deactivating Your Account
-              </h4>
+              <h4 class="text-gray-800 fw-bolder" translate="X.YOU_ARE_DEACTIVATING_YOUR"></h4>
               <div class="fs-6 text-gray-600">
                 For extra security, this requires you to confirm your email or
                 phone number when you reset yousignr password.<br /><a
                   class="fw-bolder"
                   href="#"
-                  >Learn more</a
+                   translate="X.LEARN_MORE"></a
                 >
               </div>
             </div>
@@ -48,13 +46,11 @@
             name="confirm"
             value="false"
           /><label class="form-check-label fw-bold ps-2 fs-6" for="deactivate"
-            >I confirm my account deactivation</label
+             translate="X.I_CONFIRM_MY_ACCOUNT_DEAC"></label
           >
         </div>
         <div class="fv-plugins-message-container">
-          <div class="fv-help-block">
-            Please check the box to deactivate your account
-          </div>
+          <div class="fv-help-block" translate="X.PLEASE_CHECK_THE_BOX_TO_D"></div>
         </div>
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
@@ -63,9 +59,7 @@
           type="button"
           class="btn btn-danger fw-bold"
           (click)="saveSettings()"
-        >
-          Deactivate Account
-        </button>
+         translate="X.DEACTIVATE_ACCOUNT"></button>
       </div>
     </form>
   </div>

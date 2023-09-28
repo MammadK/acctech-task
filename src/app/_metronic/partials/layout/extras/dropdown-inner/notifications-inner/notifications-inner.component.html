@@ -3,7 +3,7 @@
   [style.background-image]="'url(./assets/media/misc/menu-header-bg.jpg)'"
 >
   <h3 class="text-white fw-bold px-9 mt-10 mb-6">
-    Notifications <span class="fs-8 opacity-75 ps-3">24 reports</span>
+    Notifications <span class="fs-8 opacity-75 ps-3" translate="X._24_REPORTS"></span>
   </h3>
 
   <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-bold px-9">
@@ -19,9 +19,7 @@
         data-bs-toggle="tab"
         [ngClass]="activeTabId === 'kt_topbar_notifications_1' ? 'active' : ''"
         (click)="setActiveTabId('kt_topbar_notifications_1')"
-      >
-        Alerts
-      </a>
+       translate="X.ALERTS"></a>
     </li>
 
     <li class="nav-item">
@@ -36,9 +34,7 @@
         data-bs-toggle="tab"
         [ngClass]="activeTabId === 'kt_topbar_notifications_2' ? 'active' : ''"
         (click)="setActiveTabId('kt_topbar_notifications_2')"
-      >
-        Updates
-      </a>
+       translate="X.UPDATES"></a>
     </li>
 
     <li class="nav-item">
@@ -53,9 +49,7 @@
         data-bs-toggle="tab"
         [ngClass]="activeTabId === 'kt_topbar_notifications_3' ? 'active' : ''"
         (click)="setActiveTabId('kt_topbar_notifications_3')"
-      >
-        Logs
-      </a>
+       translate="X.LOGS"></a>
     </li>
   </ul>
 </div>
@@ -111,21 +105,16 @@
   >
     <div class="d-flex flex-column px-9">
       <div class="pt-10 pb-0">
-        <h3 class="text-dark text-center fw-bolder">Get Pro Access</h3>
+        <h3 class="text-dark text-center fw-bolder" translate="X.GET_PRO_ACCESS"></h3>
 
-        <div class="text-center text-gray-600 fw-bold pt-1">
-          Outlines keep you honest. They stoping you from amazing poorly about
-          drive
-        </div>
+        <div class="text-center text-gray-600 fw-bold pt-1" translate="X.OUTLINES_KEEP_YOU_HONEST_"></div>
 
         <div class="text-center mt-5 mb-9">
           <a
             class="btn btn-sm btn-primary px-6 cursor-pointer"
             data-bs-toggle="modal"
             data-bs-target="#kt_modal_upgrade_plan"
-          >
-            Upgrade
-          </a>
+           translate="X.UPGRADE"></a>
         </div>
       </div>
 

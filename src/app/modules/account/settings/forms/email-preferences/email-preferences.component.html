@@ -8,7 +8,7 @@
     aria-controls="kt_account_email_preferences"
   >
     <div class="card-title m-0">
-      <h3 class="fw-bolder m-0">Email Preferences</h3>
+      <h3 class="fw-bolder m-0" translate="X.EMAIL_PREFERENCES"></h3>
     </div>
   </div>
   <div id="kt_account_email_preferences" class="collapse show">
@@ -24,9 +24,9 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Successful Payments</span
+            ><span class="fw-bolder fs-5 mb-0" translate="X.SUCCESSFUL_PAYMENTS"></span
             ><span class="text-muted fs-6"
-              >Receive a notification for every successful payment.</span
+               translate="X.RECEIVE_A_NOTIFICATION_FO"></span
             ></span
           ></label
         >
@@ -42,9 +42,9 @@
             name="email-preferences[]"
             checked=""
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Payouts</span
+            ><span class="fw-bolder fs-5 mb-0" translate="X.PAYOUTS"></span
             ><span class="text-muted fs-6"
-              >Receive a notification for every initiated payout.</span
+               translate="X.RECEIVE_A_NOTIFICATION_FO"></span
             ></span
           ></label
         >
@@ -59,47 +59,9 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Fee Collection</span
+            ><span class="fw-bolder fs-5 mb-0" translate="X.FEE_COLLECTION"></span
             ><span class="text-muted fs-6"
-              >Receive a notification each time you collect a fee from
-              sales</span
-            ></span
-          ></label
-        >
-        <div class="separator separator-dashed my-6"></div>
-        <label
-          class="
-            form-check form-check-custom form-check-solid
-            align-items-start
-          "
-          ><input
-            class="form-check-input me-3"
-            type="checkbox"
-            name="email-preferences[]"
-            checked=""
-          /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Customer Payment Dispute</span
-            ><span class="text-muted fs-6"
-              >Receive a notification if a payment is disputed by a customer and
-              for dispute purposes.</span
-            ></span
-          ></label
-        >
-        <div class="separator separator-dashed my-6"></div>
-        <label
-          class="
-            form-check form-check-custom form-check-solid
-            align-items-start
-          "
-          ><input
-            class="form-check-input me-3"
-            type="checkbox"
-            name="email-preferences[]"
-          /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Refund Alerts</span
-            ><span class="text-muted fs-6"
-              >Receive a notification if a payment is stated as risk by the
-              Finance Department.</span
+               translate="X.RECEIVE_A_NOTIFICATION_EA"></span
             ></span
           ></label
         >
@@ -115,10 +77,9 @@
             name="email-preferences[]"
             checked=""
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Invoice Payments</span
+            ><span class="fw-bolder fs-5 mb-0" translate="X.CUSTOMER_PAYMENT_DISPUTE"></span
             ><span class="text-muted fs-6"
-              >Receive a notification if a customer sends an incorrect amount to
-              pay their invoice.</span
+               translate="X.RECEIVE_A_NOTIFICATION_IF"></span
             ></span
           ></label
         >
@@ -133,20 +94,52 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Webhook API Endpoints</span
+            ><span class="fw-bolder fs-5 mb-0" translate="X.REFUND_ALERTS"></span
             ><span class="text-muted fs-6"
-              >Receive notifications for consistently failing webhook API
-              endpoints.</span
+               translate="X.RECEIVE_A_NOTIFICATION_IF"></span
+            ></span
+          ></label
+        >
+        <div class="separator separator-dashed my-6"></div>
+        <label
+          class="
+            form-check form-check-custom form-check-solid
+            align-items-start
+          "
+          ><input
+            class="form-check-input me-3"
+            type="checkbox"
+            name="email-preferences[]"
+            checked=""
+          /><span class="form-check-label d-flex flex-column align-items-start"
+            ><span class="fw-bolder fs-5 mb-0" translate="X.INVOICE_PAYMENTS"></span
+            ><span class="text-muted fs-6"
+               translate="X.RECEIVE_A_NOTIFICATION_IF"></span
+            ></span
+          ></label
+        >
+        <div class="separator separator-dashed my-6"></div>
+        <label
+          class="
+            form-check form-check-custom form-check-solid
+            align-items-start
+          "
+          ><input
+            class="form-check-input me-3"
+            type="checkbox"
+            name="email-preferences[]"
+          /><span class="form-check-label d-flex flex-column align-items-start"
+            ><span class="fw-bolder fs-5 mb-0" translate="X.WEBHOOK_API_ENDPOINTS"></span
+            ><span class="text-muted fs-6"
+               translate="X.RECEIVE_NOTIFICATIONS_FOR"></span
             ></span
           ></label
         >
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
-        <button class="btn btn-light btn-active-light-primary me-2">
-          Discard
-        </button>
+        <button class="btn btn-light btn-active-light-primary me-2" translate="X.DISCARD"></button>
         <button type="button" class="btn btn-primary" (click)="saveSettings()">
-          <ng-container *ngIf="!isLoading">Save Changes</ng-container>
+          <ng-container *ngIf="!isLoading" translate="X.SAVE_CHANGES"></ng-container>
           <ng-container *ngIf="isLoading">
             <span class="indicator-progress" [style.display]="'block'">
               Please wait...{{ " " }}

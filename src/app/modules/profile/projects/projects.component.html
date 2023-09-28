@@ -1,7 +1,7 @@
 <div class="d-flex flex-wrap flex-stack mb-6">
   <h3 class="fw-bolder my-2">
     My Projects
-    <span class="fs-6 text-gray-400 fw-bold ms-1">Active</span>
+    <span class="fs-6 text-gray-400 fw-bold ms-1" translate="X.ACTIVE"></span>
   </h3>
 
   <div class="d-flex flex-wrap my-2">
@@ -13,19 +13,17 @@
         class="form-select form-select-sm form-select-white w-125px"
         defaultValue="Active"
       >
-        <option value="Active">Active</option>
-        <option value="Approved">In Progress</option>
-        <option value="Declined">To Do</option>
-        <option value="In Progress">Completed</option>
+        <option value="Active" translate="X.ACTIVE"></option>
+        <option value="Approved" translate="X.IN_PROGRESS"></option>
+        <option value="Declined" translate="X.TO_DO"></option>
+        <option value="In Progress" translate="X.COMPLETED"></option>
       </select>
     </div>
     <a
       class="btn btn-primary btn-sm cursor-pointer"
       data-bs-toggle="modal"
       data-bs-target="#kt_modal_create_project"
-    >
-      New Project
-    </a>
+     translate="X.NEW_PROJECT"></a>
   </div>
 </div>
 
@@ -167,7 +165,7 @@
 </div>
 
 <div class="d-flex flex-stack flex-wrap pt-10">
-  <div class="fs-6 fw-bold text-gray-700">Showing 1 to 10 of 50 entries</div>
+  <div class="fs-6 fw-bold text-gray-700" translate="X.SHOWING_1_TO_10_OF_50_ENT"></div>
 
   <ul class="pagination">
     <li class="page-item previous">

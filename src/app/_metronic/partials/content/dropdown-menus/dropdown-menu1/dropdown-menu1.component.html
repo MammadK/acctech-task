@@ -1,12 +1,12 @@
 <div class="px-7 py-5">
-  <div class="fs-5 text-dark fw-bolder">Filter Options</div>
+  <div class="fs-5 text-dark fw-bolder" translate="X.FILTER_OPTIONS"></div>
 </div>
 
 <div class="separator border-gray-200"></div>
 
 <div class="px-7 py-5">
   <div class="mb-10">
-    <label class="form-label fw-bold">Status:</label>
+    <label class="form-label fw-bold" translate="X.STATUS"></label>
 
     <div>
       <select
@@ -16,23 +16,23 @@
         data-allow-clear="true"
       >
         <option></option>
-        <option selected value="1">Approved</option>
-        <option value="2">Pending</option>
-        <option value="3">In Process</option>
-        <option value="4">Rejected</option>
+        <option selected value="1" translate="X.APPROVED"></option>
+        <option value="2" translate="X.PENDING"></option>
+        <option value="3" translate="X.IN_PROCESS"></option>
+        <option value="4" translate="X.REJECTED"></option>
       </select>
     </div>
   </div>
 
   <div class="mb-10">
-    <label class="form-label fw-bold">Member Type:</label>
+    <label class="form-label fw-bold" translate="X.MEMBER_TYPE"></label>
 
     <div class="d-flex">
       <label
         class="form-check form-check-sm form-check-custom form-check-solid me-5"
       >
         <input class="form-check-input" type="checkbox" value="1" />
-        <span class="form-check-label">Author</span>
+        <span class="form-check-label" translate="X.AUTHOR"></span>
       </label>
 
       <label
@@ -44,13 +44,13 @@
           value="2"
           defaultChecked="{true}"
         />
-        <span class="form-check-label">Customer</span>
+        <span class="form-check-label" translate="X.CUSTOMER"></span>
       </label>
     </div>
   </div>
 
   <div class="mb-10">
-    <label class="form-label fw-bold">Notifications:</label>
+    <label class="form-label fw-bold" translate="X.NOTIFICATIONS"></label>
 
     <div
       class="
@@ -64,7 +64,7 @@
         name="notifications"
         defaultChecked="{true}"
       />
-      <label class="form-check-label">Enabled</label>
+      <label class="form-check-label" translate="X.ENABLED"></label>
     </div>
   </div>
 
@@ -73,16 +73,12 @@
       type="reset"
       class="btn btn-sm btn-light btn-active-light-primary me-2"
       data-kt-menu-dismiss="true"
-    >
-      Reset
-    </button>
+     translate="X.RESET"></button>
 
     <button
       type="submit"
       class="btn btn-sm btn-primary"
       data-kt-menu-dismiss="true"
-    >
-      Apply
-    </button>
+     translate="X.APPLY"></button>
   </div>
 </div>

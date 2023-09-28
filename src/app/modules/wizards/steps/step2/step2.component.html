@@ -1,8 +1,8 @@
 <div class="pb-10 pb-lg-15">
-  <h2 class="fw-bolder text-dark">Account Info</h2>
+  <h2 class="fw-bolder text-dark" translate="X.ACCOUNT_INFO"></h2>
   <div class="text-gray-400 fw-bold fs-6">
     If you need more info, please check out
-    <a href="#" class="link-primary fw-bolder"> Help Page</a>.
+    <a href="#" class="link-primary fw-bolder" translate="X.HELP_PAGE"></a>.
   </div>
 </div>
 <div [formGroup]="form">
@@ -88,12 +88,10 @@
 
       </div>
     </div>
-    <div class="form-text">
-      Customers will see this shortened version of your statement descriptor
-    </div>
+    <div class="form-text" translate="X.CUSTOMERS_WILL_SEE_THIS_S"></div>
   </div>
   <div class="mb-10 fv-row">
-    <label class="form-label mb-3 required">Team Account Name</label>
+    <label class="form-label mb-3 required" translate="X.TEAM_ACCOUNT_NAME"></label>
     <input
       formControlName="accountName"
       type="text"
@@ -105,10 +103,7 @@
         form.get('accountName')?.hasError('required') &&
         form.get('accountName')?.touched
       "
-      class="fv-plugins-message-container invalid-feedback">
-
-      Team Account name is required
-    </div>
+      class="fv-plugins-message-container invalid-feedback" translate="X.TEAM_ACCOUNT_NAME_IS_REQU"></div>
   </div>
   <div class="mb-0 fv-row">
     <label class="d-flex align-items-center form-label mb-5">
@@ -127,12 +122,8 @@
             </span>
           </span>
           <span class="d-flex flex-column">
-            <span class="fw-bolder text-gray-800 text-hover-primary fs-5">
-              Company Account
-            </span>
-            <span class="fs-6 fw-bold text-gray-400">
-              Use images to enhance your post flow
-            </span>
+            <span class="fw-bolder text-gray-800 text-hover-primary fs-5" translate="X.COMPANY_ACCOUNT"></span>
+            <span class="fs-6 fw-bold text-gray-400" translate="X.USE_IMAGES_TO_ENHANCE_YOU"></span>
           </span>
         </span>
         <span class="form-check form-check-custom form-check-solid">
@@ -150,12 +141,8 @@
             </span>
           </span>
           <span class="d-flex flex-column">
-            <span class="fw-bolder text-gray-800 text-hover-primary fs-5">
-              Developer Account
-            </span>
-            <span class="fs-6 fw-bold text-gray-400">
-              Use images to your post time
-            </span>
+            <span class="fw-bolder text-gray-800 text-hover-primary fs-5" translate="X.DEVELOPER_ACCOUNT"></span>
+            <span class="fs-6 fw-bold text-gray-400" translate="X.USE_IMAGES_TO_YOUR_POST_T"></span>
           </span>
         </span>
         <span class="form-check form-check-custom form-check-solid">
@@ -173,12 +160,8 @@
             </span>
           </span>
           <span class="d-flex flex-column">
-            <span class="fw-bolder text-gray-800 text-hover-primary fs-5">
-              Testing Account
-            </span>
-            <span class="fs-6 fw-bold text-gray-400">
-              Use images to enhance time travel rivers
-            </span>
+            <span class="fw-bolder text-gray-800 text-hover-primary fs-5" translate="X.TESTING_ACCOUNT"></span>
+            <span class="fs-6 fw-bold text-gray-400" translate="X.USE_IMAGES_TO_ENHANCE_TIM"></span>
           </span>
         </span>
         <span class="form-check form-check-custom form-check-solid">
