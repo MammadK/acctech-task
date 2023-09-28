@@ -1,81 +1,106 @@
 import os
-from bs4 import BeautifulSoup
 import re
 import json
 
-# Base directory to start the search
-base_directory = './src'  # Replace with your base directory
+# List of files to be excluded
+excluded_files = ["index.html"]
 
-# Function to process inner text and create the JavaScript object
 def process_html_file(file_path):
-    with open(file_path, 'rb') as file:
-        html_content = file.read()
-        try:
-            # Attempt to decode the file using UTF-8
-            html_content = html_content.decode('utf-8')
-        except UnicodeDecodeError:
-            # Handle encoding issues
-            print(f"Error reading file {file_path}: Encoding issue")
+    translation_data = {}
+    non_matching_text = []  # List to store text that does not match the conditions
 
-    soup = BeautifulSoup(html_content, 'html.parser')
+    with open(file_path, 'r', encoding='utf-8') as html_file:
+        html_content = html_file.read()
 
-    translations = {}
+        # allElements = re.findall(r'>([^<]+)<', html_content)
+        allElements = re.findall(r'<[^/>]*>([^<]+)</[^>]*>', html_content)
+        excludedElements = re.findall(r'</[^>]*>([^<]+)<[^>]*>', html_content)
 
-    for tag in soup.find_all():
-        if tag.string is not None:
-            originalText = tag.string.strip()  # Remove trailing spaces and replace newline with space
-            originalText = originalText.replace('\n', ' ')
+        # Use list comprehensions to filter allElements
+        text_elements = [element for element in allElements if element not in excludedElements]
 
-            # Check if originalText meets the specified conditions
-            if not (originalText.isdigit() or
-                    re.match(r'^\d+\s\d+$', originalText) or
-                    re.match(r'^\d+,\d+$', originalText) or
-                    '{' in originalText or
-                    '(' in originalText or
-                    ')' in originalText or
-                    '%' in originalText or
-                    '/' in originalText or
-                    '\\' in originalText or
-                    'pm' in originalText.lower() or
-                    'am' in originalText.lower() or
-                    '@' in originalText or
-                    '.com' in originalText or
-                    '$' in originalText):
-                # Convert originalText to uppercase, replace space with '_', remove ' and limit to 25 characters
-                objectKey = '_'.join(originalText.upper().split()).replace("'", '')[:25]
-                # Ensure objectKey only contains English characters, '_', and digits
-                objectKey = re.sub(r'[^A-Z0-9_]', '', objectKey)
-                # If objectKey is not empty, add it to the translations with a comment
-                if objectKey:
-                    comment = f"// {os.path.relpath(file_path, base_directory)}"
-                    translations[objectKey] = (originalText, comment)
+        
 
-    return translations
 
-# Function to traverse subfolders and process HTML files
-def traverse_folders_and_process(base_folder):
-    translations = {}
+        for text in text_elements:
+            # Remove leading and trailing whitespace and newline characters
+            finalText = text.strip()
 
-    for root, dirs, files in os.walk(base_folder):
-        if 'assets' in dirs:
-            dirs.remove('assets')  # Exclude the 'assets' directory
+            # Remove consecutive spaces and newlines
+            finalText = ' '.join(finalText.split())
 
-        for filename in files:
-            if filename.endswith('.html'):
-                file_path = os.path.join(root, filename)
-                translations.update(process_html_file(file_path))
+            # Check conditions for text filtering
 
-    return translations
+            excluded_chars = r'[{}()@/$<>#]|^\d+[\W\d]*$|^[^\w\s&]+$|\d{2}:\d{2}|^\+|^\w$'
 
-# Run the function to traverse subfolders and process HTML files
-translations = traverse_folders_and_process(base_directory)
 
-# Save the translations to a JavaScript object
-with open('EN.js', 'w', encoding='utf-8') as js_file:
-    js_file.write('var translations = {\n')
-    for key, value in translations.items():
-        js_file.write(f'{value[1]}\n')
-        js_file.write(f'"{key}": "{value[0]}",\n')
-    js_file.write('};')
+            english_chars = r'[^A-Za-z0-9_]'
 
-print("Processing completed.")
+            if (
+                finalText and
+                not re.search(excluded_chars, finalText) and
+                not finalText.isspace()
+            ):
+                # Convert original text to uppercase and create object key
+                object_key = finalText.upper().replace(' ', '_')
+                object_key = re.sub(english_chars, '', object_key)
+
+                # Add underscore at the beginning if object_key starts with a digit
+                if object_key[0].isdigit():
+                    object_key = '_' + object_key
+
+                # Remove consecutive underscores (no repetitive _)
+                object_key = re.sub(r'(_)\1+', r'\1', object_key)
+
+                if len(object_key) > 25:
+                    object_key = object_key[:25]
+
+                # Replace the text within HTML tags with the 'translate' attribute
+                html_content = html_content.replace(f'>{text}<', f' translate="X.{object_key}"><')
+
+                # Store the data in the dictionary
+                translation_data[object_key] = finalText
+            else:
+                if finalText.strip():
+                    # If text does not match conditions, add it to the non-matching text list
+                    non_matching_text.append(text)
+
+        # Save the modified HTML content back to the file
+        with open(file_path, 'w', encoding='utf-8') as modified_html_file:
+            modified_html_file.write(html_content)
+
+    return translation_data, non_matching_text
+
+def save_non_matching_text(non_matching_text):
+    with open('./devUtils/excluded-texts111.txt', 'w', encoding='utf-8') as txt_file:
+        for text in non_matching_text:
+            txt_file.write(text + '\n' + '*****\n')
+
+
+def traverse_and_process(base_dir):
+    data = {}  # Stores the translation data
+    processed_files = 0  # Counter for processed files
+    non_matching_text = []  # List to store text that does not match the conditions
+
+    for root, _, files in os.walk(base_dir):
+        for file in files:
+            if file.endswith('.html') and 'assets' not in root and file not in excluded_files:
+                file_path = os.path.join(root, file)
+                translation_data, non_matching = process_html_file(file_path)
+                data.update(translation_data)
+                non_matching_text.extend(non_matching)
+                processed_files += 1
+
+    # Print the number of processed files
+    print(f"Processed {processed_files} files.")
+
+    # Save the translation data to extracted-texts.json
+    with open('./devUtils/extracted-texts111.json', 'w', encoding='utf-8') as js_file:
+        js_file.write(json.dumps(data, ensure_ascii=False, indent=2))
+
+    # Save non-matching text to a .txt file
+    save_non_matching_text(non_matching_text)
+
+if __name__ == "__main__":
+    base_directory = './src'
+    traverse_and_process(base_directory)
