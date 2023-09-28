@@ -78,7 +78,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    TranslationModule,
     InlineSVGModule,
     NgbDropdownModule,
     NgbProgressbarModule,
@@ -88,7 +87,6 @@ const routes: Routes = [
     EngagesModule,
     DropdownMenusModule,
     NgbTooltipModule,
-    TranslateModule,
     ThemeModeModule,
     SharedModule
   ],

@@ -25,7 +25,6 @@ import { SharedModule } from "../../../shared/shared.module";
     FormsModule,
     InlineSVGModule,
     RouterModule,
-    TranslationModule,
     NgbTooltipModule,
     SharedModule
   ],
